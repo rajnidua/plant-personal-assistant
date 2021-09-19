@@ -65,6 +65,11 @@ router.get('/:category_id/plants', withAuth, async (req, res) => {
   }
 });
 
+// Render the add category form page
+router.get("/addcategory", withAuth, (req, res) => {
+  res.render("addCategory");
+});
+
 router.post('/addcategory', withAuth, async (req, res) => {
   try {
     const newCategory = await Category.create({

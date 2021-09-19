@@ -21,5 +21,5 @@ const addButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('#add-plant')
+  .querySelector('#add-category')
   .addEventListener('click', addButtonHandler);

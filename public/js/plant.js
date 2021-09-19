@@ -15,6 +15,14 @@ const plantFormHandler = async (event) => {
     .querySelector('#plant-date-planted')
     .value.trim();
 
+  const watering_freq_num = document.querySelector('#plant-watering-num').value;
+
+  const last_watering_date_unformatted = document
+    .querySelector('#plant-last-watering-date')
+    .value.trim();
+
+  console.log('******** Planned Date', date_planted);
+
   const category_id = document
     .getElementById('add-submit')
     .getAttribute('data-category');
@@ -23,22 +31,11 @@ const plantFormHandler = async (event) => {
   // selected location
   const location_id = document.getElementById('location-selection').value;
 
-  const watering_freq_num = document.querySelector('#plant-watering-num').value;
-
-  const last_watering_date_unformatted = document
-    .querySelector('#plant-last-watering-date')
-    .value.trim();
-
-  console.log('******** Planned Date', date_planted);
-  const watering_freq_interval = document.getElementById(
+  const watering_frequency_interval_enum = document.getElementById(
     'selection-frequency'
   ).value;
 
-  /* const watering_frequency_interval_enum = document.getElementById(
-    'selection-frequency'
-  ).value; */
-
-  /* switch (watering_frequency_interval_enum) {
+  switch (watering_frequency_interval_enum) {
     case '0':
       var watering_frequency_interval_ForMoment = 'Days';
       var watering_freq_interval = 'Days';
@@ -58,12 +55,12 @@ const plantFormHandler = async (event) => {
     default:
       var watering_frequency_interval_ForMoment = 'Months';
       var watering_freq_interval = 'Months';
-  } */
+  }
 
   const last_watering_date = moment(last_watering_date_unformatted);
   const next_watering_date = moment(last_watering_date).add(
     watering_freq_num,
-    watering_freq_interval
+    watering_frequency_interval_ForMoment
   );
 
   if (name) {
@@ -106,6 +103,26 @@ async function postData(url = '', data) {
   return response.json();
 }
 
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+      alert("plant id is in js file" + id);
+    const fetchUrl = '/api/plant/delete/' + id;
+    const response = await fetch(fetchUrl, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/api/categories');
+    } else {
+      alert('Failed to delete project');
+    }
+  }
+};
+
 document
   .querySelector('.plant-form')
   .addEventListener('submit', plantFormHandler);
+document
+  .querySelector('#plant-del-btn')
+  .addEventListener('click', delButtonHandler);

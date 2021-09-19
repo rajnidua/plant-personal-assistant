@@ -14,7 +14,6 @@ const viewPlantHandler = async (event) => {
   }
 };
 
-/* document
+document
   .querySelector('#selected-plant')
   .addEventListener('click', viewPlantHandler);
- */
