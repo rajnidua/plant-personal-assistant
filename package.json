@@ -1,38 +1,36 @@
 {
-  "name": "group-project",
+  "name": "Your-Plant-House",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint *_/_.js --quiet; exit 0",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Adeamer/Project-2.git"
+    "url": "git+https://github.com/Adeamer/Your-Plant-House.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "connect-session-sequelize": "^7.0.4",
-    "dotenv": "^8.2.0",
-    "ember-truth-helpers": "^3.0.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "express-session": "^1.17.1",
-    "handlebars-dateformat": "^1.1.1",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
-  },
-  "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "prettier": "^2.1.2"
-  },
   "bugs": {
-    "url": "https://github.com/Adeamer/Project-2/issues"
+    "url": "https://github.com/Adeamer/Your-Plant-House/issues"
   },
-  "homepage": "https://github.com/Adeamer/Project-2#readme"
+  "homepage": "https://github.com/Adeamer/Your-Plant-House#readme",
+  "description": ""
 }
