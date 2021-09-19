@@ -1,7 +1,6 @@
 {
   "name": "Your-Plant-House",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -32,5 +31,6 @@
   "bugs": {
     "url": "https://github.com/Adeamer/Your-Plant-House/issues"
   },
-  "homepage": "https://github.com/Adeamer/Your-Plant-House#readme"
+  "homepage": "https://github.com/Adeamer/Your-Plant-House#readme",
+  "description": ""
 }
