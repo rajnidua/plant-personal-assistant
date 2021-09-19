@@ -1,4 +1,4 @@
-<div class='card' style='width: 80rem;'>
+<div class='card' style='width: 80rem;' id="category-detail">
 
   <div class='card-body'>
     <div class='card-header'>
@@ -8,7 +8,7 @@
   </div>
   <p>The length is {{plantsdetails.length}} and category is {{category_id}}</p>
   <div>
-    <a href='/api/plant/{{category_id}}/addPlant'>Add a Plant</a>
+    <a class="btn btn-outline-warning" href='/api/plant/{{category_id}}/addPlant'>Add a Plant</a>
   </div>
   {{#if plantsdetails.length}}
     <h3>Added Plants</h3>
@@ -18,16 +18,16 @@
           {{plant.name}}
           NEXT WATERING DATE ::
           {{plant.next_watering_date}}
-          <a href='/api/plant/{{plant.id}}'>VIEW/EDIT PLANT</a>
-
-          {{!-- <button
+          <a class="btn btn-outline-success"  href='/api/plant/{{plant.id}}'>VIEW/EDIT PLANT</a>
+          <a class='btn btn-danger' id='plant-del-btn' href='' data-id='{{plant.id}}'>DELETE</a>
+          <!-- <button
             id='selected-plant'
             data-id='{{plant.id}}'
-          >PLANT DETAILS</button> --}}</li>
+          >PLANT DETAILS</button> --></li>
 
       </ul>
     {{/each}}
   {{/if}}
 
 </div>
-{{! <script src='../js/viewPlant.js'></script> }}
+<script src='../../../js/plant.js'></script>

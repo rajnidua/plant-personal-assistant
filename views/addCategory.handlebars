@@ -1,19 +1,19 @@
 <div class='row'>
   <div class='col-md-6'>
     <h2>Add a Category</h2>
-    <form class='form plant-form'>
+    <p>When you add a category your giving you plant an online home. This will help you categorise your plants so if by the off chance you don't want to double up, you can keep track of them.</p>
+    <form class='form category-form'>
       <div class='form-group'>
-        <label for='catgeory-name'>name:</label>
-        <input class='form-input' type='text' id='category-name' />
-      </div>
+        <label for='category-name'>name:</label>
+        <input class='form-input' type='text' id='catgeory-name' />
 
       <div class='form-group'>
         <button
-          id='add-submit'
+          id='submit-btn'
           data-category='{{category_id}}'
-          class='btn btn-primary'
+          class='btn btn-outline-success'
           type='submit'
-        >ADD PLANT</button>
+        >ADD Category</button>
       </div>
     </form>
   </div>
