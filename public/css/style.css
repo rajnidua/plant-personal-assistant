@@ -21,14 +21,14 @@ header, .project:not(:last-child) {
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #1b89bc;
+    color: #216e2c;
     text-decoration: none;
     font-size: 100%;
   }
   
   
   .no-button:hover {
-    color: #065b83;
+    color: #216e2c;
     text-decoration: underline;
   }
   
@@ -84,4 +84,17 @@ header, .project:not(:last-child) {
   text-align: center;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
-  
+
+#category-card {
+  width: 30vw;
+  background-color: #7b9440;
+}
+
+#category-title {
+  font-family: 'Courier New', Courier, monospace;
+  color: #216e2c;
+}
+
+#category-detail {
+  background-color: #7b9440;
+}

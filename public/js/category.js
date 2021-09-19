@@ -36,10 +36,11 @@ const delButtonHandler = async (event) => {
   }
 };
 
- document
-  .querySelector('#delete-btn')
-  .addEventListener('click', newCategoryHandler);
 
 document
-  .querySelector('#delete-btn')
+  .querySelector('#add-Category-btn')
+  .addEventListener('click', newCategoryHandler); 
+
+document
+  .querySelector('#catdelete-btn')
   .addEventListener('click', delButtonHandler);

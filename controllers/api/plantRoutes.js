@@ -76,25 +76,11 @@ router.get('/:plant_id', async (req, res) => {
     }
     console.log('**********' + plantData);
     const plantInfo = plantData.get({ plain: true });
-
-    const locationDat = await Location.findAll({
-      where: {
-        owner_id: req.session.user_id,
-      },
-    });
-
-    const listLocations = locationDat.map((Location) =>
-      Location.get({ plain: true })
-    );
-    //res.json(plantInfo);
-    //const datePlanted = moment(plantInfo.date_planted).format(1);
     console.log('&&&&&&&&&&&&&&&' + plantInfo);
     // const plantInfo = plantData.map((Plant) => Plant.get({ plain: true }));
     //res.status(200).json(plantInfo);
     res.render('viewPlant', {
       plantInfo,
-      listLocations,
-
       logged_in: req.session.logged_in,
     });
   } catch (err) {

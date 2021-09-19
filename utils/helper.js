@@ -1,12 +1,5 @@
 const ExpressHandlebars = require('express-handlebars/lib/express-handlebars');
 
-module.exports = {
-  format_date: (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
-  },
-};
-
 /* module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
