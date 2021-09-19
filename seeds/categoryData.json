@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Cacti & Succulents",
+    "owner_id": 1
+  },
+  {
+    "name": "Foliage Plants",
+    "owner_id": 1
+  },
+  {
+    "name": "Flowering Plants",
+    "owner_id": 2
+  },
+  {
+    "name": "Orchids",
+    "owner_id": 2
+  },
+  {
+    "name": "Vegetables",
+    "owner_id": 3
+  },
+  {
+    "name": "Herbs",
+    "owner_id": 3
+  },
+  {
+    "name": "Herbs",
+    "owner_id": 4
+  },
+  {
+    "name": "Orchids",
+    "owner_id": 4
+  },
+  {
+    "name": "Flowering Plants",
+    "owner_id": 4
+  }
+]

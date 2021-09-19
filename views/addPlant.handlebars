@@ -1,0 +1,78 @@
+<div class='row'>
+  <div class='col-md-6'>
+    <h2>Add a Plant</h2>
+    <p> Category ID is {{category_id}}</p>
+    <form class='form plant-form'>
+      <div class='form-group'>
+        <label for='plant-name'>name:</label>
+        <input class='form-input' type='text' id='plant-name' />
+      </div>
+      <div class='form-group'>
+        <label for='plant-botanical-name'>Botanical name:</label>
+        <input class='form-input' type='text' id='plant-botanical-name' />
+      </div>
+      <div class='form-group'>
+        <label for='plant-sun-exposure'>Sun Exposure:</label>
+        <input class='form-input' type='text' id='plant-sun-exposure' />
+      </div>
+      <div class='form-group'>
+        <label for='plant-mature-size'>Mature Size:</label>
+        <input class='form-input' type='text' id='plant-mature-size' />
+      </div>
+
+      <div class='form-group'>
+        <label for='location-selection'>Choose a Location</label>
+        <select name='location-selection' id='location-selection'>
+
+          {{#each allLocations as |location|}}
+            <option value='{{location.id}}'> {{location.name}}</option>
+          {{/each}}
+        </select>
+
+      </div>
+      <div class='form-group'>
+        <label for='plant-date-planted'>Date Planted:</label>
+        <input class='form-input' type='date' id='plant-date-planted' />
+      </div>
+      <div class='form-group'>
+        <label for='plant-last-watering-date'>Last Watering Date:</label>
+               <input class='form-input' type='date' id='plant-last-watering-date'  />
+      </div>
+
+      <div class='form-group'>
+        <label for='plant-watering-num'>Plant Watering Frequency:</label>
+         <input
+          class='form-input'
+          type='number'
+          id='plant-watering-num'
+          required,
+          "min":1
+          "max":31,
+          "value":1/>
+         </div>
+<div>
+   <label for='plant-watering-frequency'>Plant Watering Frequency Interval:</label>
+   <select name='frequency-selection' id='selection-frequency'>
+        <option value="Days" >Days</option>
+        <option value="Weeks" >Weeks</option>
+        <option value="Months">Months</option>
+        <option value="Hours">Hours</option>
+        <option value="Years">Years</option></select>
+        </div>
+    
+
+      <div class='form-group'>
+        <button
+          id='add-submit'
+          data-category='{{category_id}}'
+          class='btn btn-primary'
+          type='submit'
+        >ADD PLANT</button>
+      </div>
+    </form>
+  </div>
+  </div>
+
+</div>
+
+<script src='../../../js/plant.js'></script>

@@ -1,0 +1,17 @@
+[
+  {
+    "frequency_name": "Hourly",
+    "watering_freq_num": "4",
+    "watering_freq_interval": "Hours"
+  },
+  {
+    "frequency_name": "Once a week",
+    "watering_freq_num": "1",
+    "watering_freq_interval": "Weeks"
+  },
+  {
+    "frequency_name": "Once a month",
+    "watering_freq_num": "1",
+    "watering_freq_interval": "Months"
+  }
+]

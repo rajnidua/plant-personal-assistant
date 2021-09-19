@@ -1,0 +1,40 @@
+<div class='row'>
+  <div class='col-auto'>
+    <h2>Welcome!</h2>
+  </div>
+</div>
+<div class='row mt-4'>
+  <div class='col-md-12'>
+    {{#if allLocations.length}}
+      <div class='col-md-12 project-list'>
+        <h3>Locations</h3>
+        
+        {{#each allLocations as |location|}}
+          <div class='card'>
+            <div class='row mb-2'>
+              <div class='col-md-8'>
+                <h4> <a href='/api/locations/{{location.id}}/plants'
+                  >{{location.name}}</a></h4>
+              </div>
+              <div class='col-md-4'>
+
+                <button
+                  class='btn btn-sm btn-danger'
+                  data-id='{{location.id}}'
+                >DELETE</button>
+                <button
+                  class='btn btn-sm'
+                  data-id='{{location.id}}'
+                >UPDATE</button>
+              </div>
+            </div>
+          </div>
+
+        {{/each}}
+      </div>
+    {{/if}}
+
+  </div>
+</div>
+
+<script src='../js/location.js'></script>

@@ -1,0 +1,122 @@
+<div class='row'>
+  <div class='col-md-6'>
+    <h2>VIEW a Plant</h2>
+    {{!-- <p> Category ID is {{category_id}}</p> --}}
+    <form class='form plant-form'>
+      <div class='form-group'>
+        <label for='plant-name'>name:</label>
+        <input
+          class='form-input'
+          type='text'
+          id='plant-name'
+          value='{{plantInfo.name}}'
+        />
+      </div>
+      <div class='form-group'>
+        <label for='plant-botanical-name'>Botanical name:</label>
+        <input
+          class='form-input'
+          type='text'
+          id='plant-botanical-name'
+          value='{{plantInfo.botanical_name}}'
+        />
+      </div>
+      <div class='form-group'>
+        <label for='plant-sun-exposure'>Sun Exposure:</label>
+        <input
+          class='form-input'
+          type='text'
+          id='plant-sun-exposure'
+          value='{{plantInfo.sun_exposure}}'
+        />
+      </div>
+      <div class='form-group'>
+        <label for='plant-mature-size'>Mature Size:</label>
+        <input
+          class='form-input'
+          type='text'
+          id='plant-mature-size'
+          value='{{plantInfo.mature_size}}'
+        />
+      </div>
+      <div class='form-group'>
+        <label for='plant-soil-type'>Soil Type:</label>
+        <input
+          class='form-input'
+          type='text'
+          id='plant-soil-type'
+          value='{{plantInfo.soil_type}}'
+        />
+      </div>
+
+      {{!-- {{#if plantInfo.next_watering_date }} --}}
+      <div><p id="next-water" data-next-water='{{plantInfo.next_watering_date}}'>NEXT WATERING DATE IS : {{plantInfo.next_watering_date}}</p></div>
+      {{!-- {{/if}}  --}}
+      <div><p>This plant is placed in {{plantInfo.location.name}}</p></div>
+      <div>
+        <label for='location-selection'>Do you want to change the location where
+          this plant is placed?</label>
+
+        <select
+          name='location-selection'
+          id='location-selection'
+          data-location='plantInfo.location_id'
+        >
+
+          {{#each listLocations as |location|}}
+            <option value='{{location.id}}'> {{location.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div><p>Date Planted: {{plantInfo.date_planted}}</p></div>
+      <div class='form-group'>
+        <label for='plant-date-planted'>Do you want to update planted date for
+          this plant:</label>
+        <input class='form-input' type='date' id='plant-date-planted' data-date-planted = '{{plantInfo.date_planted}}' />
+      </div>
+
+      <div><p>Last watered on : {{plantInfo.last_watering_date}}</p></div>
+       <div class='form-group'>
+        <label for='plant-last-watering-date'>Do you want to update last watered date for this plant:</label>
+               <input class='form-input' type='date' id='plant-last-watering-date' data-date-last-watered="" = '{{plantInfo.last_watering_date}}'/>
+      </div>  
+      
+       <div class='form-group'>
+        <label for='plant-watering-num'>Plant Watering Frequency:</label>
+         <input
+          class='form-input'
+          type='number'
+          id='plant-watering-num'
+          value={{plantInfo.watering_freq_num}}
+          required,
+          "min":1
+          "max":31,
+          "value":1/>
+         </div>  
+       <div> 
+   <label for='plant-watering-frequency'>Plant Watering Frequency Interval: {{plantInfo.watering_freq_interval}}, you can change it using the list below:</label>
+   <select name='frequency-selection' id='selection-watering-frequency' data-water-frequency='{{plantInfo.watering_freq_interval}}' >
+        <option value="0" >Days</option>
+        <option value="1" >Weeks</option>
+        <option value="2">Months</option>
+        <option value="3">Hours</option>
+        <option value="4">Years</option></select>
+        </div>  
+
+      <div class='form-group'>
+        <button
+          id='add-submit'
+          data-category='{{plantInfo.category_id}}'
+          data-plant='{{plantInfo.id}}'
+          class='btn btn-primary'
+          type='submit'
+        >UPDATE PLANT INFORMATION</button>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<script src='../../../js/updatePlant.js'></script>

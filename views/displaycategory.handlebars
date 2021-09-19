@@ -1,0 +1,33 @@
+<div class='card' style='width: 80rem;'>
+
+  <div class='card-body'>
+    <div class='card-header'>
+      <h5 class='card-title'>Category Detail</h5>
+    </div>
+    
+  </div>
+  <p>The length is {{plantsdetails.length}} and category is {{category_id}}</p>
+  <div>
+    <a href='/api/plant/{{category_id}}/addPlant'>Add a Plant</a>
+  </div>
+  {{#if plantsdetails.length}}
+    <h3>Added Plants</h3>
+    {{#each plantsdetails as |plant|}}
+      <ul class='list-group list-group-flush'>
+        <li class='list-group-item'>{{plant.id}}
+          {{plant.name}}
+          NEXT WATERING DATE ::
+          {{plant.next_watering_date}}
+          <a href='/api/plant/{{plant.id}}'>VIEW/EDIT PLANT</a>
+
+          {{!-- <button
+            id='selected-plant'
+            data-id='{{plant.id}}'
+          >PLANT DETAILS</button> --}}</li>
+
+      </ul>
+    {{/each}}
+  {{/if}}
+
+</div>
+{{! <script src='../js/viewPlant.js'></script> }}
