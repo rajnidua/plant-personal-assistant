@@ -102,4 +102,3 @@ The following animation demonstrates the application functionality:
 
 ## Credits
 
-NOO CREDITS!!!
