@@ -131,4 +131,3 @@ The following animation demonstrates the application functionality:
 
 
 
-
