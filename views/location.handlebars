@@ -3,6 +3,16 @@
     <h2>Welcome!</h2>
   </div>
 </div>
+
+ <div class='form location-add-form'>
+      <label for='location-name'>Location name:</label>
+      <input class='form-input' type='text' id='location-name' />
+
+      <button id='add-Location-btn' data-location='adding-location' class='btn btn-primary' type='submit'>ADD
+        Location</button>
+    </div>
+
+
 <div class='row mt-4'>
   <div class='col-md-12'>
     {{#if allLocations.length}}
@@ -22,12 +32,10 @@
                 <button
                   class='btn btn-sm btn-danger'
                   data-id='{{location.id}}'
+                  id='locdelete-btn'
                 >DELETE</button>
 
-                <button
-                  class='btn btn-sm'
-                  data-id='{{location.id}}'
-                >UPDATE</button>
+                
               </div>
             </div>
           </div>
