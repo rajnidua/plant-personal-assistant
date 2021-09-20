@@ -62,10 +62,11 @@
           id='location-selection'
           data-location='plantInfo.location_id'
         >
-
+          {{#if listLocations.length }}
           {{#each listLocations as |location|}}
             <option value='{{location.id}}'> {{location.name}}</option>
           {{/each}}
+          {{/if}}
         </select>
       </div>
 
@@ -78,16 +79,17 @@
 
       <div><p>Last watered on : {{plantInfo.last_watering_date}}</p></div>
        <div class='form-group'>
-        <label for='plant-last-watering-date'>Do you want to update last watered date for this plant:</label>
-               <input class='form-input' type='date' id='plant-last-watering-date' data-date-last-watered="" = '{{plantInfo.last_watering_date}}'/>
+        <label for='plant-last-watering-date'>Do you want to update last watered date for this plant: </label>
+               <input class='form-input' type='date' id='plant-last-watering-date' data-date-last-watered = '{{plantInfo.last_watering_date}}'/>
       </div>  
       
        <div class='form-group'>
-        <label for='plant-watering-num'>Plant Watering Frequency:</label>
+        <label for='plant-watering-num'>Plant Watering Frequency: </label>
          <input
           class='form-input'
           type='number'
           id='plant-watering-num'
+          data-watering-num = '{{plantInfo.watering_freq_num}}'
           value={{plantInfo.watering_freq_num}}
           required,
           "min":1
@@ -95,7 +97,9 @@
           "value":1/>
          </div>  
        <div> 
-   <label for='plant-watering-frequency'>Plant Watering Frequency Interval: {{plantInfo.watering_freq_interval}}, you can change it using the list below:</label>
+
+
+   <label for='plant-watering-frequency'>You can change the plant's watering frequency using the list below: {{plantInfo.watering_freq_interval}}</label>
    <select name='frequency-selection' id='selection-watering-frequency' data-water-frequency='{{plantInfo.watering_freq_interval}}' >
         <option value="0" >Days</option>
         <option value="1" >Weeks</option>

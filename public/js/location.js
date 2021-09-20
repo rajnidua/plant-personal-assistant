@@ -36,6 +36,11 @@ const delButtonHandler = async (event) => {
   }
 };
 
+
+var locDelButtons = document.querySelectorAll('#locdelete-btn').length;
+for (var i = 0; i < locDelButtons ; i++) {
+    document.querySelectorAll('#locdelete-btn')[i].addEventListener("click", delButtonHandler);
+}
 document
-  .querySelector('.location-name')
-  .addEventListener('submit', LocationHandler);
+  .querySelector('#add-location-btn')
+  .addEventListener('click', newLocationHandler); 

@@ -11,6 +11,8 @@ const plantFormHandler = async (event) => {
     .value.trim();
   const mature_size = document.querySelector('#plant-mature-size').value.trim();
 
+  const soil_type = document.querySelector('#plant-soil-type').value.trim();
+
   const date_planted = document
     .querySelector('#plant-date-planted')
     .value.trim();
@@ -71,6 +73,7 @@ const plantFormHandler = async (event) => {
       botanical_name,
       sun_exposure,
       mature_size,
+      soil_type,
       category_id,
       location_id,
       date_planted,
@@ -123,6 +126,10 @@ const delButtonHandler = async (event) => {
 document
   .querySelector('.plant-form')
   .addEventListener('submit', plantFormHandler);
+  
+  // delete a plant is from cateogry
+  /*
 document
   .querySelector('#plant-del-btn')
   .addEventListener('click', delButtonHandler);
+*/

@@ -1,0 +1,41 @@
+<div class='row'>
+  <div class='col-auto'>
+    <h2>Welcome {{userName}}!</h2>
+  
+  </div>
+</div>
+<div class='row mt-4'>
+  <div class='col-md-12'>
+    {{#if allplantWaterDates.length}}
+    <div class='col-md-12 project-list'>
+      <h3>Plant</h3>
+
+<div class="row mb-2">
+    <table class="table">
+  <thead>
+    <tr>
+      
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Scheduled Watering Date</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each allplantWaterDates as |plantWaterDate|}}
+
+    <tr>
+      {{!-- <th scope="row">1</th> --}}
+      <td>{{plantWaterDate.name}}</td>
+      <td>{{plantWaterDate.category.name}}</td>
+      <td>{{plantWaterDate.next_watering_date}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+    {{/if}}
+          <h4 id="plant-name">{{plantWaterDate.name}}  {{plantWaterDate.category.name}}    {{plantWaterDate.next_watering_date}} </h4>
+        </div>
+      
+</div>
+</div>

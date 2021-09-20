@@ -97,15 +97,16 @@ router.get('/:location_id/plants', withAuth, async (req, res) => {
       ],
       where: {
         owner_id: req.session.user_id,
-        category_id: req.params.location_id,
+        location_id: req.params.location_id,
       },
     });
 
     const plantsdetails = plantData.map((Plant) => Plant.get({ plain: true }));
     // Pass serialized data and session flag into template
 
-    res.render('displaycategory', {
-      ...plantsdetails,
+    res.render('displaylocation', {
+      plantsdetails,
+      location_id: req.params.location_id,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
