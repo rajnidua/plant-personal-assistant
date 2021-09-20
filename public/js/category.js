@@ -36,11 +36,13 @@ const delButtonHandler = async (event) => {
   }
 };
 
+var catDelButtons = document.querySelectorAll('#catdelete-btn').length;
+for (var i = 0; i < catDelButtons ; i++) {
+    document.querySelectorAll('#catdelete-btn')[i].addEventListener("click", delButtonHandler);
+}
 
 document
   .querySelector('#add-Category-btn')
   .addEventListener('click', newCategoryHandler); 
 
-document
-  .querySelector('#catdelete-btn')
-  .addEventListener('click', delButtonHandler);
+ 

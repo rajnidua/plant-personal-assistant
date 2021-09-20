@@ -28,10 +28,11 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/:category_id/plants', withAuth, async (req, res) => {
   try {
+
     // Get the category data
     console.log('*********', req.session.user_id);
     console.log('********* category_id', req.params.category_id);
-
+ 
     const plantData = await Plant.findAll({
       include: [
         {
@@ -46,12 +47,13 @@ router.get('/:category_id/plants', withAuth, async (req, res) => {
     });
 
     console.log('*********** plantdata', plantData);
-    const plantsdetails = plantData.map((Plant) => Plant.get({ plain: true }));
+     const plantsdetails = plantData.map((Plant) => Plant.get({ plain: true }));
     // Pass serialized data and session flag into template
     console.log('*********** plantsdetail', plantsdetails);
     console.log('********* plantsdetails.le', plantsdetails.length);
 
-    //res.json(plantsdetails);
+  //  res.json(categoryData);
+
 
     res.render('displaycategory', {
       plantsdetails,
@@ -60,15 +62,16 @@ router.get('/:category_id/plants', withAuth, async (req, res) => {
     });
 
     //res.json(plantsdetails);
+    
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-// Render the add category form page
+  
+/* // Render the add category form page
 router.get("/addcategory", withAuth, (req, res) => {
   res.render("addCategory");
-});
+}); */
 
 router.post('/addcategory', withAuth, async (req, res) => {
   try {
@@ -91,6 +94,32 @@ router.delete('/delete/:category_id', withAuth, async (req, res) => {
         owner_id: req.session.user_id,
       },
     });
+
+    if (!categoryData) {
+      res.status(404).json({ message: 'No Category found with this id!' });
+      return;
+    }
+
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.patch('/update/:category_id', withAuth, async (req, res) => {
+  try {
+    const categoryData = await Category.update(
+      {
+        ...req.body,
+      },
+      {
+      where: {
+        id: req.params.category_id,
+        owner_id: req.session.user_id,
+      },
+    }
+    );
 
     if (!categoryData) {
       res.status(404).json({ message: 'No Category found with this id!' });

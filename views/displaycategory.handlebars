@@ -1,12 +1,25 @@
 <div class='card' style='width: 80rem;' id="category-detail">
 
+
+
   <div class='card-body'>
     <div class='card-header'>
       <h5 class='card-title'>Category Detail</h5>
     </div>
     
   </div>
-  <p>The length is {{plantsdetails.length}} and category is {{category_id}}</p>
+  {{!-- <p>The length is {{plantsdetails.length}} and category is {{category_id}}</p> --}}
+
+ <div class='form category-upd-form'>
+      <label for='category-name'>Category name:</label>
+      <input class='form-input' type='text' id='category-name' />
+
+      <button id='upd-Category-btn' data-category='{{category_id}}' class='btn btn-primary' type='submit'>UPDATE
+        CATEGORY</button>
+    </div>
+
+
+
   <div>
     <a class="btn btn-outline-warning" href='/api/plant/{{category_id}}/addPlant'>Add a Plant</a>
   </div>
@@ -19,7 +32,7 @@
           NEXT WATERING DATE ::
           {{plant.next_watering_date}}
           <a class="btn btn-outline-success"  href='/api/plant/{{plant.id}}'>VIEW/EDIT PLANT</a>
-          <a class='btn btn-danger' id='plant-del-btn' href='' data-id='{{plant.id}}'>DELETE</a>
+          <a class='btn btn-danger' id='plant-del-btn'  data-id='{{plant.id}}' data-catid='{{category_id}}'>DELETE</a>
           <!-- <button
             id='selected-plant'
             data-id='{{plant.id}}'
@@ -30,4 +43,5 @@
   {{/if}}
 
 </div>
-<script src='../../../js/plant.js'></script>
+ 
+<script src='../../../js/displaycategory.js'></script>
