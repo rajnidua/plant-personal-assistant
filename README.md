@@ -85,6 +85,28 @@ WHEN I click on view update button
 THEN I AM able to redirect to update form
 WHERE I can view my plants details and update them as per requirement.
 
+### Screenshots
+![](./public/assets/images/Screenshot1_plant_house.png)
+
+
+![](./public/assets/images/Screenshot2_plant_house.png)
+
+![](./public/assets/images/Screenshot3.png)
+
+![](./public/assets/images/Screenshot4.png)
+
+
+![](./public/assets/images/Screenshot5.png)
+
+
+![](./public/assets/images/Screenshot6.png)
+
+
+
+### Video Link
+https://drive.google.com/file/d/1lIwF6WTNdSOzSln2HvEYYPYKxCa4AqmN/view?usp=sharing
+
+
 ## Usage
 
 Enter your search terms into the corresponding form and click search! Results will populate below the forms. 
