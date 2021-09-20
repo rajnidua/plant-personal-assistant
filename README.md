@@ -113,21 +113,10 @@ https://project-2-your-plant-house.herokuapp.com
 ### Github Link
 https://github.com/Adeamer/Your-Plant-House
 
+For commit history please see the original repo: https://github.com/Adeamer/Project-2 
+The code in this repo is broken as we faced alot of issues pushing the code to the main branch. We would get alot of conflicts but weren't able to resolve them in Git-Hib.
+So we add the your-plant-house repo to get the app working.
 
-## Usage
-
-Enter your search terms into the corresponding form and click search! Results will populate below the forms. 
-
-You can clear the results by clicking the 'Clear Search Results' Button. Your previous searches are saved as suggestions in each input.
-
-Here is the Link to the application for Heroku: 
-
-Here is the Link to the application for github: 
-
-Here is a screen grab of the webpage:
-
-
-The following animation demonstrates the application functionality:
 
 
 
