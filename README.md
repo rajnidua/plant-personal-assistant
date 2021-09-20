@@ -107,6 +107,13 @@ WHERE I can view my plants details and update them as per requirement.
 https://drive.google.com/file/d/1lIwF6WTNdSOzSln2HvEYYPYKxCa4AqmN/view?usp=sharing
 
 
+### Heroku Link
+https://project-2-your-plant-house.herokuapp.com
+
+### Github Link
+https://github.com/Adeamer/Your-Plant-House
+
+
 ## Usage
 
 Enter your search terms into the corresponding form and click search! Results will populate below the forms. 
@@ -122,6 +129,6 @@ Here is a screen grab of the webpage:
 
 The following animation demonstrates the application functionality:
 
-## Credits
 
-NOO CREDITS!!!
+
+
