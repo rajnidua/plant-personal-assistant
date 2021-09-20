@@ -106,30 +106,37 @@ async function postData(url = '', data) {
   return response.json();
 }
 
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-      alert("plant id is in js file" + id);
-    const fetchUrl = '/api/plant/delete/' + id;
-    const response = await fetch(fetchUrl, {
+    const catId = event.target.getAttribute('data-catid');
+
+    const response = await fetch(`/api/plant/delete/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/api/categories');
+      document.location.replace(`/api/categories/${catId}`);
     } else {
       alert('Failed to delete project');
     }
   }
 };
 
+
+
+
+
 document
   .querySelector('.plant-form')
   .addEventListener('submit', plantFormHandler);
   
-  // delete a plant is from cateogry
-  /*
-document
-  .querySelector('#plant-del-btn')
-  .addEventListener('click', delButtonHandler);
-*/
+var plantDelButtons = document.querySelectorAll('#plant-del-btn').length;
+for (var i = 0; i < plantDelButtons ; i++) {
+    document.querySelectorAll('#plant-del-btn')[i].addEventListener("click", delButtonHandler);
+}
+
+
+
+  
